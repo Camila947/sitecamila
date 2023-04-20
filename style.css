@@ -1,91 +1,94 @@
 :root{
-    --corfundo: #f5f1f1; /*Cor de fundo do site*/
-    --cortexto: black; /*cor padrao da fonte*/
-    --corprincipal:#400036;
-    --corsecundaria:#FF81D0;
-    --cordestaque: #D9A0BF;
+    --corfundo: rgb(255, 255, 255); /*Cor de fundo do site*/
+    --cortexto: rgb(22, 22, 22); /*Cor padrão da fonte do site*/
+    --corprincipal: #275d8c;
+    --corsecundaria: #20818C;
+    --cordestaque: #F29F05;
 
-
-
-    --larguramaxima: 1000px;
-    --larguraminima: 250px;
+    --larguramaxima: 900px; /*Largura máxima do site*/
+    --larguraminima: 250px; /*Largura mínima do site*/
 }
 
+/*  Segunda Opção
+    --corprincipal: #401430;
+    --corsecundaria: #A60F55;
+    --cordestaque: #F2E857;
+*/
+
 *{
-    margin: 0; /*o margin retira as margens do site*/
-    padding: 0;/*retira as margens internas*/
+    margin: 0; /*O margin retira as margens do site*/
+    padding: 0; /*Retira as margens internas*/
 }
 
 body{
-  background-color: var(--corfundo); /*cor de fundo*/
-  color: var(--cortexto);
-}  
-header,main,footer{
-    max-width: var(--larguramaxima); /*determina a largura maxima da pagina*/
-    min-width: var(--larguraminima); /*determina a largura  minima da pagina*/
-    padding: 20px; /*controla as margens internas*/
-    margin: auto; /*centraliza as sessoes no meio*/
+    background-color: var(--corfundo); /*Cor de fundo*/
+    color: var(--cortexto); /*Cor da fonte*/
 }
+
+header, main, footer{
+    max-width: var(--larguramaxima); /*Determina a largura MÁXIMA da página*/
+    min-width: var(--larguraminima); /*Determina a largura MÍNIMA da página*/
+    padding: 20px; /*Controla as margens INTERNAS*/
+    margin: auto; /*Centraliza as sessões no meio*/
+    position: relative; /*Deixar os elementos internos com posicionamento relativo e eles*/
+}
+
 footer{
     background-color: var(--corprincipal);
 }
+
 footer>p{
-    color: var(--corfundo)
+    color: var(--corfundo);
 }
 
-
-h1,h2,h3{
-    color: var(--cordestaque)
+h1, h2, h3{
+    color: var(--cordestaque);
 }
+
 span{
-    color:var(--cordestaque)
+    color: var(--cordestaque);
 }
 
+.social{ /*Botões*/
+    width: 35px; /*Largura dos icones*/
+    filter: invert(1) opacity(.6); /*Filtro de cor*/
+}
 
+.social:hover{
+    filter: invert(1) opacity(1) sepia(1);
+}
 
+#capa{
+    width: 100%; /*Largura*/
+    height: 300px; /*Altura*/
+    background-image: url('images/bg-abstrato.jpg'); /*Define a imagem de fundo*/
+    background-repeat: no-repeat; /*Argumento para não repetir a imagem*/
+    background-position: 0px 0px; /*POSICIONA a imagem no fundo atravez dos eixos X e Y*/
+    background-size: cover; /*Ajusta o tamanho da imagem*/
+    display: flex; /*Deixa os elementos filhos flexiveis/moveis*/
+    flex-direction: column; /*Posiciona um elemento abaixo do outro*/
+    justify-content: center; /*Alinha no centro vertical*/
+    align-items: center; /* Alinha no centro horizontal*/
+}
 
+#capa>h1{
+    color: var(--cordestaque);
+}
 
+#capa>p{
+    color: var(--corfundo);
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#sociais{
+    width: 170px; /*Largura*/
+    position: absolute; /*Posição em relação ao elemto pai*/
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%);
+    top: 100px;
+    display: flex; 
+    justify-content: space-between;
+}
 
 #fotoperfil{
     width: 120px;
@@ -94,28 +97,49 @@ span{
     top: 260px;
 }
 
-/*Menu*/
+/*MENU*/
 nav{
-    display: flex; /*deixa os itens internos soltos na horizontal*/
+    display: flex; /*Deixa os itens internos soltos na horizontal*/
     justify-content: center;
 }
+
 #menu{
-    background-color: rgb(245, 243, 247);
     width: 120px;
-    display: flex; /*deixa os itens internos soltos na horizontal*/
-    justify-content: space-between; /*distribui horizontalmente os elementos internos*/
+    display: flex; /*Deixa os itens internos soltos na horizontal*/
+    justify-content: space-between; /*Distribui horizontalmente os elementos internos*/
 }
 
 .menu{
-    color:var(--corprincipal); /*muda cor do link*/
-   text-decoration: none; /*retira o sublinado do texto*/
-   font-size: 1.3em;/*muda o tamanho da fonte*/
-   padding: 5px 5px 5px 5px;/*margem interna do botao*/
-}
-.menu:hover{
-    color: var(--cordestaque);/*cor*/
-    background-color: var(--corprincipal);/*cor de fundo*/
-    border-radius: 5px;/*arredonda os cantos*/
-    box-shadow: 3px 3px 3px black;/*iniciar a partir daqui*/
+    color: var(--corprincipal); /*Muda a cor do link*/
+    text-decoration: none; /*Retira o sublinhado do texto*/
+    font-size: 1.3em; /*Muda o tamanho da fonte*/
+    padding: 4px 15px; /*Margem interna do botão*/
     
+}
+
+.menu:hover{
+    color: var(--cortexto); /*Cor*/
+    background-color: var(--cordestaque); /*Cor de fundo*/
+    border-radius: 5px; /*Arredonda os cantos*/
+    box-shadow: 3px 3px 3px black; /*INICIAR A PARTI DAQUI*/
+}
+
+.alinhamento{
+    text-align: justify;
+}
+
+/* YOUTUBE */
+.youtube{
+    background-color: var(--corfundo);
+    /*margin:  0px -20px;*/
+    position: relative;
+    padding-bottom: 57%; /*Ajustar para reirar espaços pretos nas laterais*/
+}
+
+.youtube>iframe{
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    width: 92%;
+    height: 92%;
 }
