@@ -95,6 +95,7 @@ span{
     position: absolute;
     left: 50px;
     top: 260px;
+    border-radius: 50%; /*foto redonda*/
 }
 
 /*MENU*/
